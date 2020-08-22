@@ -1,0 +1,17 @@
+class Solution:
+    def forceSearch(self, txt, pat):
+        m, n = len(txt), len(pat)
+        if not m: return not n
+        if not n: return True
+        
+        for i in range(m - n + 1):
+            for j in range(n):
+                if txt[i+j] != pat[j]:
+                    break
+            if j == n-1:
+                return True
+        return False
+
+s = Solution()
+if s.forceSearch('abecsesc', 'cse'):
+    print('yes') 
